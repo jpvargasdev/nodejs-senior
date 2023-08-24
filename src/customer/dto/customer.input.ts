@@ -9,6 +9,9 @@ export class WhereCustomerInput {
   @Field(() => String, { nullable: true })
   email?: string;
 
+  @Field(() => String, { nullable: true })
+  name?: string;
+
   @Field(() => Date, { nullable: true })
   createdAt?: Date;
 
@@ -29,4 +32,13 @@ export class GetCustomerInput {
 
   @Field(() => WhereCustomerInput, { nullable: true })
   where: WhereCustomerInput;
+}
+
+@InputType()
+export class UpdateCustomerInput {
+  @Field(() => String, { nullable: true })
+  email?: string;
+
+  @Field({ nullable: true })
+  name?: string;
 }

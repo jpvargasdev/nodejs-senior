@@ -21,26 +21,26 @@ export class CustomerService {
     return this.prisma.customer.create({ data: params });
   }
 
-  async get(id: string) {
+  async get(email: string) {
     return this.prisma.customer.findUnique({
       where: {
-        id,
+        email,
       },
     });
   }
 
-  async remove(id: string) {
+  async remove(email: string) {
     return this.prisma.customer.delete({
       where: {
-        id,
+        email,
       },
     });
   }
 
-  async update(id: string, data: Partial<Customer>) {
+  async update(email: string, data: Partial<Customer>) {
     return this.prisma.customer.update({
       where: {
-        id,
+        email,
       },
       data,
     });
