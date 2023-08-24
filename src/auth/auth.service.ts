@@ -16,7 +16,6 @@ export class AuthService {
     const customer = await this.customerService.get(email);
 
     if (!customer) {
-      console.log('entro aqui');
       throw new UnauthorizedException();
     }
 
@@ -25,7 +24,6 @@ export class AuthService {
     }
 
     if (customer.status !== Status.ACTIVE) {
-      console.log('entro aqui 2');
       throw new UnauthorizedException();
     }
 
